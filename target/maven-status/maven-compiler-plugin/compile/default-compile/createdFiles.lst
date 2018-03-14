@@ -1,1 +1,3 @@
-MyClass.class
+com\accenture\flowershop\be\access\FlowerDAO.class
+com\accenture\flowershop\be\access\Flower.class
+com\accenture\flowershop\be\access\Castomer.class
