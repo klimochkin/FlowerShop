@@ -1,37 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a9676488-4505-43d6-b08b-103bbcd85ba6" name="Default" comment="renamed">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/FlowerDAO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/CustomerAccessService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/OrderAccessService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/BuyBusinessService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/CatalogBusinessService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/CloseBusinessService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/UserBusinessService.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/order/Order.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/user/Customer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/user/User.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/user/UserRole.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+    <list default="true" id="a9676488-4505-43d6-b08b-103bbcd85ba6" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/FlowerAccessService.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/flower/Flower.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/order/Cart.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/config/application-context.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/flowershop.iml" afterPath="$PROJECT_DIR$/flowershop.iml" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MyClass.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/classes/MyClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/flowershop.war" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/flowershop/WEB-INF/classes/MyClass.class" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/flowershop/WEB-INF/web.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/flowershop/index.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
@@ -46,16 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FlowerAccessService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/FlowerAccessService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="7" column="4" lean-forward="false" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="OrderAccessService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/OrderAccessService.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -72,7 +44,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/resources/config/application-context.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
-              <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -81,14 +53,16 @@
       <file leaf-file-name="CatalogBusinessServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="13" />
+            <state relative-caret-position="101">
+              <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#330#331#0" expanded="true" />
-                <element signature="e#357#358#0" expanded="true" />
-                <element signature="e#411#412#0" expanded="true" />
-                <element signature="e#438#439#0" expanded="true" />
+                <element signature="e#478#479#0" expanded="true" />
+                <element signature="e#505#506#0" expanded="true" />
+                <element signature="e#559#560#0" expanded="true" />
+                <element signature="e#586#587#0" expanded="true" />
+                <element signature="e#699#700#0" expanded="true" />
+                <element signature="e#772#773#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,14 +71,16 @@
       <file leaf-file-name="UserBusinessServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#310#311#0" expanded="true" />
-                <element signature="e#337#338#0" expanded="true" />
-                <element signature="e#426#427#0" expanded="true" />
-                <element signature="e#453#454#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#566#567#0" expanded="true" />
+                <element signature="e#593#594#0" expanded="true" />
+                <element signature="e#637#638#0" expanded="true" />
+                <element signature="e#707#708#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -113,14 +89,13 @@
       <file leaf-file-name="CustomerAccessServiceImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+            <state relative-caret-position="272">
+              <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="e#436#437#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#516#517#0" expanded="true" />
+                <element signature="e#495#496#0" expanded="true" />
+                <element signature="e#539#540#0" expanded="true" />
+                <element signature="e#611#612#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -129,12 +104,39 @@
       <file leaf-file-name="FlowerAccessServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+            <state relative-caret-position="204">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#313#314#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
+                <element signature="e#450#451#0" expanded="true" />
+                <element signature="e#477#478#0" expanded="true" />
+                <element signature="e#521#522#0" expanded="true" />
+                <element signature="e#591#592#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BuyBusinessServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+              <folding>
+                <element signature="e#572#573#0" expanded="true" />
+                <element signature="e#641#642#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CUstomerDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <marker date="1521032568835" expanded="false" signature="2861:3038" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -143,21 +145,15 @@
       <file leaf-file-name="OrderAccessServiceImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+            <state relative-caret-position="187">
+              <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#446#447#0" expanded="true" />
+                <element signature="e#473#474#0" expanded="true" />
+                <element signature="e#518#519#0" expanded="true" />
+                <element signature="e#587#588#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="7" lean-forward="true" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -242,19 +238,19 @@
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/flower/Flower.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/order/Cart.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/BuseAccessServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/CustomerAccessService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/FlowerAccessService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/FlowerAccessService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/OrderAccessService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/Component.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/config/application-context.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java" />
       </list>
     </option>
@@ -639,7 +635,14 @@
       <option name="project" value="LOCAL" />
       <updated>1521030526106</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="renamed">
+      <created>1521031789267</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1521031789267</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -654,7 +657,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10154241" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22432433" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22837839" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -886,16 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="4" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="4" />
-          <folding>
-            <marker date="1521026874980" expanded="false" signature="2860:3037" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/order/Order.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -930,16 +923,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/entity/order/Cart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -961,44 +944,6 @@
         <state relative-caret-position="102">
           <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#337#338#0" expanded="true" />
-            <element signature="e#426#427#0" expanded="true" />
-            <element signature="e#453#454#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="4" lean-forward="false" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#330#331#0" expanded="true" />
-            <element signature="e#357#358#0" expanded="true" />
-            <element signature="e#411#412#0" expanded="true" />
-            <element signature="e#438#439#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1036,22 +981,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#313#314#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/config/application-context.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1059,16 +992,96 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/DAO/CUstomerDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="23" lean-forward="true" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        <state relative-caret-position="204">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <marker date="1521032568835" expanded="false" signature="2861:3038" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/BuyBusinessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="11" column="36" lean-forward="false" selection-start-line="11" selection-start-column="36" selection-end-line="11" selection-end-column="36" />
+          <folding>
+            <element signature="e#572#573#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/CatalogBusinessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="101">
+          <caret line="12" column="40" lean-forward="false" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-            <element signature="e#436#437#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#516#517#0" expanded="true" />
+            <element signature="e#478#479#0" expanded="true" />
+            <element signature="e#505#506#0" expanded="true" />
+            <element signature="e#559#560#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#699#700#0" expanded="true" />
+            <element signature="e#772#773#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/business/impl/UserBusinessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="12" column="30" lean-forward="false" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#566#567#0" expanded="true" />
+            <element signature="e#593#594#0" expanded="true" />
+            <element signature="e#637#638#0" expanded="true" />
+            <element signature="e#707#708#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/OrderAccessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="29" lean-forward="false" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#446#447#0" expanded="true" />
+            <element signature="e#473#474#0" expanded="true" />
+            <element signature="e#518#519#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/FlowerAccessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#450#451#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#591#592#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/accenture/flowershop/be/access/impl/CustomerAccessServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="37" lean-forward="true" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#495#496#0" expanded="true" />
+            <element signature="e#539#540#0" expanded="true" />
+            <element signature="e#611#612#0" expanded="true" />
           </folding>
         </state>
       </provider>

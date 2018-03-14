@@ -14,6 +14,7 @@ public class CUstomerDAO {
     private List<Customer> listCustomer = new ArrayList<>();
 
 
+
     public List<Customer> getListCustomer() {
         return listCustomer;
     }
