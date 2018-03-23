@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Context>
+    <Parameter name="AppName" value="cbr-clm"/>
+    <!-- url="jdbc:h2:mem:flowershop	       -	in memory DB, data is erased after application stop -->
+    <!-- url="jdbc:h2:tcp://localhost/flowershop“  -	file DB, H2 should be running on PC for this mode -->
+    <Resource name="jdbc/flowerShopDS" auth="Container"
+              type="javax.sql.DataSource" driverClassName="org.h2.Driver"
+              url="jdbc:h2:mem:flowershop"
+              username="sa" password=""
+    maxActive="10" maxIdle="3"
+    initialSize="1"
+    removeAbandoned="true"
+    removeAbandonedTimeout="30"
+    testWhileIdle="true"
+    validationQuery="Select 1 From dual"
+    maxWait="-1"/>
+</Context>

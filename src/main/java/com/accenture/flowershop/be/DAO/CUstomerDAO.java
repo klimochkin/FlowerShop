@@ -1,6 +1,6 @@
 package com.accenture.flowershop.be.DAO;
 
-import com.accenture.flowershop.be.entity.user.Customer;
+import com.accenture.flowershop.be.entity.user.User;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -11,16 +11,16 @@ public class CUstomerDAO {
     // @SuppressWarnings("unused")
     private Connection conn;
 
-    private List<Customer> listCustomer = new ArrayList<>();
+    private List<User> listUser = new ArrayList<>();
 
 
 
-    public List<Customer> getListCustomer() {
-        return listCustomer;
+    public List<User> getListUser() {
+        return listUser;
     }
 /*
-    public void setListAccount(List<Customer> listCustomer) {
-        this.listCustomer = listCustomer;
+    public void setListAccount(List<User> listUser) {
+        this.listUser = listUser;
     }
 
 //===========================================================================================================================
@@ -31,28 +31,28 @@ public class CUstomerDAO {
 
 //===========================================================================================================================
 
-    public List<Customer> findListCustomer(String firstName, String lastName)
+    public List<User> findListCustomer(String firstName, String lastName)
             throws SQLException {
         try {
             Statement statement = null;
             statement = this.conn.createStatement();
 
-            ResultSet result = statement.executeQuery("SELECT * FROM Customer WHERE firstName = '" + firstName +"' AND lastName = '"+ lastName + "'");
+            ResultSet result = statement.executeQuery("SELECT * FROM User WHERE firstName = '" + firstName +"' AND lastName = '"+ lastName + "'");
             while (result.next()) {
-                Customer customer = new Customer(	result.getInt("id"),
+                User customer = new User(	result.getInt("id"),
                         result.getString("firstName"),
                         result.getString("lastName"),
                         result.getString("address"),
                         result.getInt("account"),
                         result.getInt("tel")
                 );
-                this.getListCustomer().add(customer);
+                this.getListUser().add(customer);
             }
 
         }catch (SQLException e1){
             System.out.println("Поиск не удался!");
         }
-        return this.getListCustomer();
+        return this.getListUser();
     }
 
 //===========================================================================================================================
@@ -61,9 +61,9 @@ public class CUstomerDAO {
             throws SQLException {
         Statement statement = null;
         statement = this.conn.createStatement();
-        statement.executeUpdate("Insert into Customer (firstName, lastName, address, account, tel) values ('" +firstName+ "','"+lastName+"','" +address+"','2000','"+tel+"')");
+        statement.executeUpdate("Insert into User (firstName, lastName, address, account, tel) values ('" +firstName+ "','"+lastName+"','" +address+"','2000','"+tel+"')");
 
-        ResultSet result = statement.executeQuery("SELECT * FROM Customer WHERE firstName = '" + firstName + "' AND lastName = '" + lastName+"'");
+        ResultSet result = statement.executeQuery("SELECT * FROM User WHERE firstName = '" + firstName + "' AND lastName = '" + lastName+"'");
 
         if (result.next()) {
             System.out.println("Пользователь  | " + firstName + " " + lastName + " | добавлен...");
@@ -78,7 +78,7 @@ public class CUstomerDAO {
 
         Statement statement = null;
         statement = this.conn.createStatement();
-        statement.execute("DELETE FROM Customer WHERE id = " + id);
+        statement.execute("DELETE FROM User WHERE id = " + id);
         return;
     }
 
@@ -124,7 +124,7 @@ public class CUstomerDAO {
 
             obj.findListCustomer("Vasya", "Ivanov");
 
-            for( Customer customer : obj.getListCustomer()) {
+            for( User customer : obj.getListUser()) {
                 System.out.println("Номер в выборке #" + customer.getId()
                         + "\t FirstName = " + customer.getFirstName()
                         + "\t LastName = " + customer.getLastName()

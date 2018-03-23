@@ -7,7 +7,11 @@ import java.util.List;
 
 public interface CatalogBusinessService {
 
-    List<Flower> viewCatalog();
-    List<Flower> findFlower();
-    void detailsFlower(Flower flower);
+    List<Flower> findAllFlower();
+
+    Flower flowerFromList(String nameFlower);
+
+    boolean updateFlowerList();
+
+    void flowerListClear();
 }
