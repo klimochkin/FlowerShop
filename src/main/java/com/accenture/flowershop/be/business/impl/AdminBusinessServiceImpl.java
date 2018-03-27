@@ -24,15 +24,21 @@ public class AdminBusinessServiceImpl implements AdminBusinessService {
        return this.orderAccessService.findAllOrderCustomer();
     }
 
+    @Override
+    public List<OrderCustomer> getOrderList(String username) {
+
+       return orderAccessService.findUserOrderCustomer(username);
+    }
+
     public AdminBusinessServiceImpl() {
     }
 
     @Override
     @Transactional
-    public void editStatuse(Integer orderCustomerId, Integer n){
+    public void editStatuse(Integer orderCustomerId){
         OrderCustomer orderCustomer = this.orderAccessService.getOrderCustomer(orderCustomerId);
-        orderCustomer.setStatus(n);
-        this.orderAccessService.saveOrderCustomer(orderCustomer);
+        orderCustomer.setStatus(OrderCustomer.OrderCustomerStatus.CLOSED);
+        this.orderAccessService.updateOrderCustomer(orderCustomer);
     }
 
     @PostConstruct

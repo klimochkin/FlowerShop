@@ -4,9 +4,11 @@ import com.accenture.flowershop.be.access.FlowerAccessService;
 import com.accenture.flowershop.be.access.impl.FlowerAccessServiceImpl;
 import com.accenture.flowershop.be.business.CatalogBusinessService;
 import com.accenture.flowershop.be.entity.flower.Flower;
+import com.accenture.flowershop.be.entity.order.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.annotation.PostConstruct;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service("CatalogBusinessServiceImpl")
@@ -15,36 +17,31 @@ public class CatalogBusinessServiceImpl implements CatalogBusinessService {
     @Autowired
     private FlowerAccessService flowerAccessService;
 
-    private List<Flower> listFlowers;
-
     public CatalogBusinessServiceImpl(){
     }
 
-
     @Override
     public List<Flower> findAllFlower() {
-        if (listFlowers == null || listFlowers.size() == 0)
-            this.listFlowers = this.flowerAccessService.findAll();
-        return this.listFlowers;
+        return  this.flowerAccessService.findAll();
     }
 
     @Override
-    public Flower flowerFromList(String nameFlower){
-        for(Flower flower : this.listFlowers) {
-            if(flower.getName().equals(nameFlower))
-                return flower;
-        }
-        return null;
-    }
+    public Flower findFlower(String nameFlower){
+                return   this.flowerAccessService.getFlower(nameFlower);
+   }
 
 
     @Override
-    public boolean updateFlowerList() {
+    public boolean updateFlowerList( Cart cart) {
+
         try {
             for (Flower flower : this.flowerAccessService.findAll()) {
-                Flower newFlower = this.flowerFromList(flower.getName());
-                flower.setCount(newFlower.getCount());
-                flowerAccessService.updateFlover(flower);
+
+                Integer count = cart.findCountFlowerToCart(flower);
+                if(count != null){
+                    flower.setCount(flower.getCount()-count);
+                    flowerAccessService.updateFlover(flower);
+                }
             }
             return true;
         }catch (Exception e){
@@ -52,8 +49,19 @@ public class CatalogBusinessServiceImpl implements CatalogBusinessService {
         }
     }
 
-    public void flowerListClear(){
-        this.listFlowers.clear();
+
+        @Override
+        public List<Flower> findListFlower(String flowerName, Integer min, Integer max){
+            if(min == null)
+                min = 0;
+            if(max == null)
+                max = Integer.MAX_VALUE;
+
+            BigDecimal minB = new BigDecimal(min);
+            BigDecimal maxB = new BigDecimal(max);
+
+
+        return this.flowerAccessService.findFlowers(flowerName, minB, maxB);
     }
 
     @PostConstruct

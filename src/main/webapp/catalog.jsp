@@ -24,6 +24,12 @@
                  <input type="submit" value="Выход"><br/>
              </form>
 
+
+        <form name="loginForm" method="POST" action="order">
+            <input type="hidden" value="ls" name="btnLS"/>
+            <input type="submit" value="Личная страница"><br/>
+        </form>
+
        <center>
 <table border="0" width="80%" cellpadding="5">
 <th>
@@ -42,7 +48,6 @@
                                 </tr>
                             </c:forEach>
                     </table><br/>
-                    <p style="color:#ff0000">${odredMessage}</p>
 
                     <table border="0" width="60%" cellpadding="5">
                          <th>
@@ -61,10 +66,30 @@
                              </form>
                          </th>
                     </table>
+                    <font color="green">${odredMessage1}</font>
 </th>
 
 <th>
             <h2>Каталог цветов</h2>
+
+            <form class="form-inline" method="post" action="catalog">
+                 <table border="0" width="80%" cellpadding="9">
+                 <th>
+                     <th>Поиск по имени: </th>
+                     <th><input type="text" name="findName" placeholder="имя цветка"></th>
+                 </th>
+                 <th>
+                     <th>Поиск по цене: </th>
+                     <th><input type="text" name="min" placeholder="от">
+                     <input type="text" name="max" placeholder="до"></th>
+                 </th>
+                 <th>
+                     <input type="submit" value="Поиск"><br/>
+                 </th>
+                 </table>
+                 <p style="color:#ff0000">${findMessage}</p>
+            </form>
+
             <table border="5" width="100%" cellpadding="9">
                 <tr>
                     <th>Цветок</th>

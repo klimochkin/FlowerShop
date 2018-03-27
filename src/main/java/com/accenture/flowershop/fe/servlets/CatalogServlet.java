@@ -48,7 +48,42 @@ public class CatalogServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
 
+        String findName = request.getParameter("findName");
+        String minStr = request.getParameter("min");
+        String maxStr = request.getParameter("max");
+        Integer min = null;
+        Integer max = null;
+
+        String findMessage = "";
+        if(!minStr.equals("")) {
+            try {
+                min = Integer.parseInt(minStr);
+            } catch (NumberFormatException e) {
+                findMessage = "Некорректное значение";
+                session.setAttribute("findMessage", findMessage);
+                response.sendRedirect("/catalog");
+                return;
+            }
+        }
+        if(!maxStr.equals("")){
+            try {
+                max = Integer.parseInt(maxStr);
+            } catch (NumberFormatException e) {
+                findMessage = "Некорректное значение";
+                session.setAttribute("findMessage", findMessage);
+                response.sendRedirect("/catalog");
+                return;
+            }
+        }
+
+
+
+        List<Flower> flowers = catalogBusinessService.findListFlower(findName, min, max);
+        session.setAttribute("flowers", flowers);
+
+        response.sendRedirect("/catalog");
     }
 
     @Override
@@ -70,8 +105,14 @@ public class CatalogServlet extends HttpServlet {
         response.setContentType("text/html");
         request.setCharacterEncoding("UTF-8");
 
-        // Получаем каталог и выводим
-        request.setAttribute("flowers", catalogBusinessService.findAllFlower());
+        List<Flower> flowers = (List<Flower>) session.getAttribute("flowers");
+        // Получаем каталог
+        if(flowers == null){
+            flowers = catalogBusinessService.findAllFlower();
+            session.setAttribute("flowers", flowers);
+        }
+
+        //request.setAttribute("flowers", catalogBusinessService.findAllFlower());
 
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("/catalog.jsp");

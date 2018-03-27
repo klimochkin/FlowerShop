@@ -37,13 +37,13 @@ public class UserBusinessServiceImpl implements UserBusinessService {
     User user = new User( firstName,  lastName,  address,  account,  tel,  discount,  username,  password,  email, userRole);
 
         try {
-            this.customerAccessService.saveCustomer(user);
-        }catch (Exception e){
-            System.out.println("Регистрация клиента не удалось! ");
-            return false;
-        }
-        return true;
+        this.customerAccessService.saveCustomer(user);
+    }catch (Exception e){
+        System.out.println("Регистрация клиента не удалось! ");
+        return false;
     }
+        return true;
+}
 
     public User findUser(String username){
         return this.customerAccessService.getUser(username);

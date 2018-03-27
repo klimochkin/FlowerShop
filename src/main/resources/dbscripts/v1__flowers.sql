@@ -58,7 +58,7 @@ CREATE TABLE UserRole (
       user_id INT NOT NULL,
       sum DECIMAL(30) NOT NULL,
       dateOrder DATE NOT NULL,
-      status INT NOT NULL,
+      status VARCHAR(45) NOT NULL,
       CONSTRAINT "FK_USERS" FOREIGN KEY (user_id) REFERENCES Users (user_id),
      );
 

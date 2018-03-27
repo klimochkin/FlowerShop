@@ -1,8 +1,11 @@
 package com.accenture.flowershop.be.access.impl;
 
+import com.accenture.flowershop.be.access.CustomerAccessService;
 import com.accenture.flowershop.be.access.OrderAccessService;
 import com.accenture.flowershop.be.entity.order.OrderCustomer;
 import com.accenture.flowershop.be.entity.order.OrderItem;
+import com.accenture.flowershop.be.entity.user.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import javax.annotation.PostConstruct;
 import javax.persistence.EntityManager;
@@ -17,6 +20,9 @@ public class OrderAccessServiceImpl implements OrderAccessService {
     @PersistenceContext
     private EntityManager entityManager;
 
+    @Autowired
+    CustomerAccessService customerAccessService;
+
     OrderAccessServiceImpl(){
     }
 
@@ -30,6 +36,15 @@ public class OrderAccessServiceImpl implements OrderAccessService {
     @Override
     public List<OrderCustomer> findAllOrderCustomer() {
         return entityManager.createQuery("select oc from OrderCustomer oc", OrderCustomer.class).getResultList();
+    }
+
+    @Override
+    public List<OrderCustomer> findUserOrderCustomer(String username) {
+        User user = customerAccessService.getUser(username);
+        Integer id  = user.getId();
+        TypedQuery<OrderCustomer> tq = entityManager.createQuery("select oc from OrderCustomer oc where oc.user.id = :id", OrderCustomer.class);
+        tq.setParameter("id", id);
+        return tq.getResultList();
     }
 
     //------------------------------------------------------------------------------------------------------
@@ -81,6 +96,19 @@ public class OrderAccessServiceImpl implements OrderAccessService {
         } catch (Exception e) {
             System.out.println("Цветок - "+id+" - не найден!!!");
             return null;
+        }
+    }
+
+    //------------------------------------------------------------------------------------------------------
+
+    @Override
+    @Transactional
+    public void updateOrderCustomer(OrderCustomer orderCustomer) {
+        try {
+            this.entityManager.merge(orderCustomer);
+            //   EntityManager.flush();
+        }catch (Exception e) {
+            System.out.println("Ошибка записи заказа "+orderCustomer.getSum()+" в БД");
         }
     }
 

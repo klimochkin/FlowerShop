@@ -11,6 +11,8 @@ import java.util.Date;
 @Table
 public class OrderCustomer {
 
+    public enum OrderCustomerStatus { CREATED, PAID, CLOSED}
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_ordCust")
     @SequenceGenerator(name = "seq_ordCust", sequenceName = "seq_ordCust", allocationSize = 1)
@@ -25,7 +27,8 @@ public class OrderCustomer {
     private BigDecimal sum;
 
     @Column
-    private Integer status;
+    @Enumerated(EnumType.STRING)
+    private OrderCustomerStatus status;
 
     @Column
     private Date dateOrder;
@@ -37,13 +40,15 @@ public class OrderCustomer {
     public OrderCustomer() {
     }
 
-    public OrderCustomer(Integer orderCustomerId, User user, BigDecimal sum, Integer status, Date dateOrder) {
+    public OrderCustomer(Integer orderCustomerId, User user, BigDecimal sum, OrderCustomerStatus status, Date dateOrder) {
         this.orderCustomerId = orderCustomerId;
         this.user = user;
         this.sum = sum;
         this.status = status;
         this.dateOrder = dateOrder;
     }
+
+
 
     public Integer getOrderCustomerId() {
         return orderCustomerId;
@@ -69,11 +74,11 @@ public class OrderCustomer {
         this.sum = sum;
     }
 
-    public Integer getStatus() {
+    public OrderCustomerStatus getStatus() {
         return status;
     }
 
-    public void setStatus(Integer status) {
+    public void setStatus(OrderCustomerStatus status) {
         this.status = status;
     }
 

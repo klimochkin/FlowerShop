@@ -6,7 +6,9 @@ import java.util.List;
 
 public interface AdminBusinessService {
 
-    void editStatuse(Integer orderCustomerId, Integer n);
+    void editStatuse(Integer orderCustomerId);
 
     List<OrderCustomer> getOrderList();
+
+    List<OrderCustomer> getOrderList(String username);
 }

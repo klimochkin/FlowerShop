@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Repository
@@ -20,24 +21,24 @@ public class FlowerAccessServiceImpl implements FlowerAccessService {
 
 
     @PostConstruct
-    public void test(){
+    public void test() {
         System.out.println("FlowerAccessServiceImpl создан! ");
     }
 
-    public FlowerAccessServiceImpl(){
+    public FlowerAccessServiceImpl() {
     }
 
     //------------------------------------------------------------------------------------------------------
 
     @Override
-    public List<Flower> findAll(){
-            return entityManager.createQuery("select f from Flower f", Flower.class).getResultList();
+    public List<Flower> findAll() {
+        return entityManager.createQuery("select f from Flower f", Flower.class).getResultList();
     }
 
     //------------------------------------------------------------------------------------------------------
 
     @Override
-    public Flower getFlower(String name){
+    public Flower getFlower(String name) {
 
         TypedQuery<Flower> tq = entityManager.createQuery(
                 "Select f from Flower f where f.name = :name", Flower.class);
@@ -48,36 +49,64 @@ public class FlowerAccessServiceImpl implements FlowerAccessService {
             result = tq.getSingleResult();
             return result;
         } catch (Exception e) {
-            System.out.println("Цветок - "+name+" - не найден!!!");
+            System.out.println("Цветок - " + name + " - не найден!!!");
             return null;
         }
     }
 
     //------------------------------------------------------------------------------------------------------
     @Override
-    public void updateFlover(Flower flower){
+    public void updateFlover(Flower flower) {
         try {
             this.entityManager.merge(flower);
             //   EntityManager.flush();
-        }catch (Exception e) {
-            System.out.println("Ошибка записи юзера "+flower.getName()+" в БД");
+        } catch (Exception e) {
+            System.out.println("Ошибка записи юзера " + flower.getName() + " в БД");
         }
     }
-
 
 
     //------------------------------------------------------------------------------------------------------
 
     @Override
     @Transactional
-    public void saveFlower(Flower flower){
+    public void saveFlower(Flower flower) {
         try {
             this.entityManager.persist(flower);
             //   EntityManager.flush();
-        }catch (Exception e) {
-            System.out.println("Ошибка записи юзера "+flower.getName()+" в БД");
+        } catch (Exception e) {
+            System.out.println("Ошибка записи юзера " + flower.getName() + " в БД");
         }
     }
 
-}
 
+    @Override
+    public List<Flower> findFlowers(String flowerName, BigDecimal min, BigDecimal max) {
+
+
+        TypedQuery<Flower> tq;
+
+        if (flowerName.equals("")){
+            tq = entityManager.createQuery(
+                    "select f from Flower f where f.price BETWEEN :min and :max", Flower.class);
+            tq.setParameter("min", min);
+            tq.setParameter("max", max);
+        }
+        else {
+            tq = entityManager.createQuery(
+                    "select f from Flower f where f.name = :name and f.price BETWEEN :min and :max", Flower.class);
+            tq.setParameter("name", flowerName);
+            tq.setParameter("min", min);
+            tq.setParameter("max", max);
+        }
+
+        List<Flower> result = null;
+        try {
+            result = tq.getResultList();
+            return result;
+        } catch (Exception e) {
+            System.out.println("Список цветов не найден!!!");
+            return null;
+        }
+    }
+}

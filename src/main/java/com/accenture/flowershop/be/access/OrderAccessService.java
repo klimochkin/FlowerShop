@@ -10,12 +10,15 @@ public interface OrderAccessService {
 
      List<OrderCustomer> findAllOrderCustomer();
 
+     List<OrderCustomer> findUserOrderCustomer(String username);
 
      OrderCustomer getOrderCustomer(Integer id);
 
      void saveOrderCustomer(OrderCustomer orderCustomer);
 
      OrderItem getOrderItem(Integer id);
+
+     void updateOrderCustomer(OrderCustomer orderCustomer);
 
      void saveOrderItem(OrderItem orderItem);
 }

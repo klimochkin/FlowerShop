@@ -40,12 +40,9 @@ public class AdminServlet extends HttpServlet {
         Integer orderId = Integer.parseInt(request.getParameter("OrderId"));
 
 
-        if (statuse == 1) {
-            adminBusinessService.editStatuse(orderId, 1);
-        }
 
         if (statuse == 2) {
-            adminBusinessService.editStatuse(orderId, 2);
+            adminBusinessService.editStatuse(orderId);
         }
 
         // Выход
