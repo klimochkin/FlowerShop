@@ -50,16 +50,16 @@ public class BuyBusinessServiceImpl implements BuyBusinessService {
     public boolean saveOrderCustomer(String userName, Cart cart){
         OrderCustomer orderCustomer = new OrderCustomer();
 
-        // Списание денег со счета юзера
+
         User user = this.customerAccessService.getUser(userName);
 
         // Получаем дату заказа
         Calendar currantDate = GregorianCalendar.getInstance();
         Date finalDate = currantDate.getTime();
 
+        // Заполняем поля заказа
         orderCustomer.setUser(user);
-        orderCustomer.setSum(cart.allSum());
-
+        orderCustomer.setSum(cart.discountedSum(user.getDiscount()));
         orderCustomer.setStatus(OrderCustomer.OrderCustomerStatus.CREATED);
         orderCustomer.setDateOrder(finalDate);
 

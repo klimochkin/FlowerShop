@@ -3,11 +3,13 @@ package com.accenture.flowershop.be.entity.user;
 import com.accenture.flowershop.be.entity.flower.Flower;
 import org.springframework.stereotype.Component;
 import javax.persistence.*;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 
 
 
-
+@XmlRootElement
 @Entity
 @Table(name = "Users")
 public class User {
@@ -74,6 +76,7 @@ public class User {
         return id;
     }
 
+    @XmlElement
     public void setId(Integer id) {
         this.id = id;
     }
@@ -82,6 +85,7 @@ public class User {
         return firstName;
     }
 
+    @XmlElement
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -90,6 +94,7 @@ public class User {
         return lastName;
     }
 
+    @XmlElement
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -98,6 +103,7 @@ public class User {
         return address;
     }
 
+    @XmlElement
     public void setAddress(String address) {
         this.address = address;
     }
@@ -106,6 +112,7 @@ public class User {
         return account;
     }
 
+    @XmlElement
     public void setAccount(BigDecimal account) {
         this.account = account;
     }
@@ -114,6 +121,7 @@ public class User {
         return tel;
     }
 
+    @XmlElement
     public void setTel(String tel) {
         this.tel = tel;
     }
@@ -122,6 +130,7 @@ public class User {
         return discount;
     }
 
+    @XmlElement
     public void setDiscount(Integer discount) {
         this.discount = discount;
     }
@@ -130,6 +139,7 @@ public class User {
         return username;
     }
 
+    @XmlElement
     public void setUsername() {
         this.username = username;
     }
@@ -138,6 +148,7 @@ public class User {
         return email;
     }
 
+    @XmlElement
     public void setEmail(String email) {
         this.email = email;
     }
@@ -146,6 +157,7 @@ public class User {
         return password;
     }
 
+    @XmlElement
     public void setPassword(String password) {
         this.password = password;
     }
@@ -154,6 +166,7 @@ public class User {
         return userRole;
     }
 
+    @XmlElement
     public void setUserRole(UserRole userRole) {
         this.userRole = userRole;
     }

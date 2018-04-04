@@ -4,13 +4,15 @@
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:jee="http://www.springframework.org/schema/jee"
+       xmlns:jaxws="http://cxf.apache.org/jaxws"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                  http://www.springframework.org/schema/beans/spring-beans.xsd
                  http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.0.xsd
                  http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
                  http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
-                 http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd">
+                 http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd
+                 http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
 
     <context:annotation-config/>
     <context:component-scan base-package="com.accenture.flowershop"/>
@@ -38,10 +40,10 @@
         </property>
         <property name="jpaVendorAdapter">
         <bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter">
-            <property name="database" value="ORACLE" />
+             <property name="database" value="ORACLE" />
              <property name="generateDdl" value="false"/>
              <property name="showSql" value="true"/>
-         </bean>
+        </bean>
         </property>
         <property name="jpaDialect">
             <bean class="org.springframework.orm.jpa.vendor.HibernateJpaDialect" />
@@ -49,19 +51,37 @@
         <property name="jpaProperties">
             <props>
                 <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
-	<prop key="hibernate.show_sql">true</prop>
-</props></property></bean>
+	            <prop key="hibernate.show_sql">true</prop>
+            </props>
+        </property>
+    </bean>
 
-
-
-
+<!--======================================================================================================================-->
 
     <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager" >
-    <property name="entityManagerFactory" ref="entityManagerFactory" />
-</bean>
+        <property name="entityManagerFactory" ref="entityManagerFactory" />
+    </bean>
 
     <tx:annotation-driven/>
 
+<!--======================================================================================================================-->
+
+    <bean id="UserMarshgallingServiceImpl" class="com.accenture.flowershop.be.business.impl.UserMarshgallingServiceImpl">
+          <property name="marshaller" ref="castorMarshaller" />
+    </bean>
+
+    <bean id="castorMarshaller" 	class="org.springframework.oxm.castor.CastorMarshaller"/>
+
+<!--======================================================================================================================-->
+
+        <!-- Service implementor bean -->
+    <bean id="FlowersStockWebService" class="com.accenture.flowershop.fe.ws.impl.FlowersStockWebServiceImpl" />
+
+        <!-- JAX-WS endpoint bean which is picked up by CXF -->
+    <jaxws:endpoint id="FlowersStockWebService2" implementor="#FlowersStockWebService"
+        address="/FlowersStockWebService"/>
+
+    <!--======================================================================================================================-->
 
 
 </beans>

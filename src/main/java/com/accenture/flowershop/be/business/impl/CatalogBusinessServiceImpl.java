@@ -7,6 +7,8 @@ import com.accenture.flowershop.be.entity.flower.Flower;
 import com.accenture.flowershop.be.entity.order.Cart;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.annotation.PostConstruct;
 import java.math.BigDecimal;
 import java.util.List;
@@ -45,6 +47,7 @@ public class CatalogBusinessServiceImpl implements CatalogBusinessService {
             }
             return true;
         }catch (Exception e){
+            System.out.println("Цветы не свписались со склада!");
             return false;
         }
     }
@@ -62,6 +65,16 @@ public class CatalogBusinessServiceImpl implements CatalogBusinessService {
 
 
         return this.flowerAccessService.findFlowers(flowerName, minB, maxB);
+    }
+
+    @Override
+    @Transactional
+    public void addCountFlower(int count) {
+
+       for(Flower flower : this.flowerAccessService.findAll()){
+           flower.setCount(flower.getCount()+count);
+           this.flowerAccessService.updateFlover(flower);
+       }
     }
 
     @PostConstruct

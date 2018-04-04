@@ -10,6 +10,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Repository
 public class CustomerAccessServiceImpl implements CustomerAccessService {
@@ -33,7 +34,7 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
 //------------------------------------------------------------------------------------------------------
 */
     @PersistenceContext
-    private EntityManager EntityManager;
+    private EntityManager entityManager;
 
     public CustomerAccessServiceImpl(){
      }
@@ -47,7 +48,7 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
 //------------------------------------------------------------------------------------------------------
 
     public UserRole getUserRole(int id) {
-        TypedQuery<UserRole> tq = EntityManager.createQuery("Select r from UserRole r where r.userTypeId = :id", UserRole.class);
+        TypedQuery<UserRole> tq = entityManager.createQuery("Select r from UserRole r where r.userTypeId = :id", UserRole.class);
         tq.setParameter("id", id);
 
         UserRole result = null;
@@ -64,7 +65,7 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
 
     public User getUser(Integer id){
 
-        TypedQuery<User> tq = EntityManager.createQuery(
+        TypedQuery<User> tq = entityManager.createQuery(
                 "Select user from User user where user.user_id = :id", User.class);
         tq.setParameter("id", id);
 
@@ -81,7 +82,7 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
 //------------------------------------------------------------------------------------------------------
 
     public User getUser(String userName){
-        TypedQuery<User> tq = EntityManager.createQuery(
+        TypedQuery<User> tq = entityManager.createQuery(
                 "Select user from User user where user.username = :userName", User.class);
         tq.setParameter("userName", userName);
 
@@ -98,7 +99,7 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
 //------------------------------------------------------------------------------------------------------
     @Override
     public User loginUser(String login, String password){
-         TypedQuery<User> tq = EntityManager.createQuery(
+         TypedQuery<User> tq = entityManager.createQuery(
                  "Select user from User user where user.username = :login and user.password = :password ", User.class);
          tq.setParameter("login", login);
          tq.setParameter("password", password);
@@ -119,9 +120,10 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
     @Transactional
     public void saveCustomer(User user){
         try {
-            this.EntityManager.persist(user);
+            this.entityManager.persist(user);
          //   EntityManager.flush();
         }catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Ошибка записи юзера "+user.getFirstName()+" в БД");
         }
     }
@@ -134,10 +136,16 @@ public class CustomerAccessServiceImpl implements CustomerAccessService {
         try {
           //  User user = this.getUser(id);
 
-            this.EntityManager.merge(user);
+            this.entityManager.merge(user);
             //   EntityManager.flush();
         }catch (Exception e) {
             System.out.println("Ошибка записи юзера "+user.getUsername()+" в БД");
         }
+    }
+
+//------------------------------------------------------------------------------------------------------
+
+    public List<User> findAll(){
+        return entityManager.createQuery("select u from User u", User.class).getResultList();
     }
 }

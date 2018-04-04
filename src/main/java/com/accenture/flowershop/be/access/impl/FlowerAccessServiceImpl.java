@@ -56,6 +56,7 @@ public class FlowerAccessServiceImpl implements FlowerAccessService {
 
     //------------------------------------------------------------------------------------------------------
     @Override
+    @Transactional
     public void updateFlover(Flower flower) {
         try {
             this.entityManager.merge(flower);

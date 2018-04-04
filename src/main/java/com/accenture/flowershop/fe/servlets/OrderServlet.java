@@ -56,6 +56,7 @@ public class OrderServlet extends HttpServlet {
 
 
         HttpSession session = request.getSession();
+
         List<CartItem> cartFromSession = (List<CartItem>) session.getAttribute("cart");
 
          if(cartFromSession != null){
@@ -105,11 +106,21 @@ public class OrderServlet extends HttpServlet {
             if(!cart.cast(flower, strFlowerName, count))
                 message = "На складе недостатоно цветов!";
 
+            // Получаем сумму со скидкой
+
+            Integer discount = -1;
+            try {
+                 discount = Integer.parseInt(session.getAttribute("discount").toString());
+            } catch (NumberFormatException e) {
+                discount = 0;
+            }
+
+
             // Запоминаем в сессии
-        //    HttpSession session = request.getSession();
             session.setAttribute("cart", cart.getCart());
             session.setAttribute("message", message);
             session.setAttribute("summa", cart.allSum().toString());
+            session.setAttribute("summaDiscounted", cart.discountedSum(discount).toString());
         }
 
         // Создать заказ
@@ -125,6 +136,8 @@ public class OrderServlet extends HttpServlet {
             //!!!
            cart.cartClear();
             session.setAttribute("summa", 0);
+            session.setAttribute("summaDiscounted", 0);
+            session.setAttribute("flowers", null);
         }
 
         // Выход
@@ -136,8 +149,8 @@ public class OrderServlet extends HttpServlet {
             session = request.getSession();
             session.invalidate();
             cart.cartClear();
-            session.removeAttribute("summa");
-            session.removeAttribute("cart");
+           // session.removeAttribute("summa");
+           // session.removeAttribute("cart");
            // session.setAttribute("summa", 0);
             response.sendRedirect("/login");
             return;
@@ -149,6 +162,7 @@ public class OrderServlet extends HttpServlet {
             cart.cartClear();
           //  this.buyBusinessService.flowerListClear();
             session.setAttribute("summa", 0);
+            session.setAttribute("summaDiscounted", 0);
             session.removeAttribute("cart");
            // session.setAttribute.
         }

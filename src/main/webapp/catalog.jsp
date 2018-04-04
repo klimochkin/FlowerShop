@@ -53,6 +53,11 @@
                          <th>
                              <h4 style="color:#0000ff">Cумма: ${summa}</h4>
                          </th>
+
+                         <th>
+                             <h4 style="color:#228B22">Со скидкой: ${summaDiscounted}</h4>
+                         </th>
+
                          <th>
                              <form class="form-inline" method="post" action="order">
                                 <input type="hidden" value="orderClick" name="orderBuy"/>

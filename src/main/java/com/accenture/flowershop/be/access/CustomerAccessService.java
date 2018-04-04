@@ -1,5 +1,6 @@
 package com.accenture.flowershop.be.access;
 
+
 import com.accenture.flowershop.be.entity.user.User;
 import com.accenture.flowershop.be.entity.user.UserRole;
 
@@ -21,4 +22,6 @@ public interface CustomerAccessService {
     UserRole getUserRole(int id);
 
     void  editCustomer (User user);
+
+    List<User> findAll();
 }

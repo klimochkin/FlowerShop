@@ -85,6 +85,17 @@ public class Cart {
         return allSum;
     }
 
+    public BigDecimal discountedSum(Integer discount) {
+
+        BigDecimal allSum = BigDecimal.ZERO;
+        for (CartItem item : this.getCart()){
+            allSum = allSum.add(item.getSumItem());
+        }
+        allSum = allSum.subtract(allSum.multiply(new BigDecimal(discount)).divide(new BigDecimal(100)));
+        return allSum;
+    }
+
+
     //------------------------------------------------------------------------------------------------------
 
     public CartItem findCartItem (String nameFlower ){

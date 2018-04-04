@@ -36,6 +36,8 @@ public class RegistrationServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+
+
         String firstName = request.getParameter("firstName");
         String lastName = request.getParameter("lastName");
         String address = request.getParameter("address");

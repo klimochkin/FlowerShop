@@ -4,6 +4,11 @@ package com.accenture.flowershop.be.business.impl;
 import com.accenture.flowershop.be.access.OrderAccessService;
 import com.accenture.flowershop.be.business.AdminBusinessService;
 import com.accenture.flowershop.be.entity.order.OrderCustomer;
+
+//import org.jboss.logging.Logger;
+import org.slf4j.Logger;
+
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +18,10 @@ import java.util.List;
 
 @Service("AdminBusinessServiceImpl")
 public class AdminBusinessServiceImpl implements AdminBusinessService {
+
+
+    private static final Logger LOG = LoggerFactory.getLogger(AdminBusinessServiceImpl.class);
+
 
     @Autowired
     OrderAccessService orderAccessService;
@@ -44,5 +53,8 @@ public class AdminBusinessServiceImpl implements AdminBusinessService {
     @PostConstruct
     public void test(){
         System.out.println("AdminBusinessServiceImpl создан! ");
+
+        LOG.debug("Создан бин AdminBusinessServiceImpl");
+        LOG.error("test error");
     }
 }

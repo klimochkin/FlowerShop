@@ -35,7 +35,7 @@ CREATE TABLE UserRole (
     lastName VARCHAR(45) NOT NULL,
     address VARCHAR(45) NOT NULL,
     account DECIMAL(30) NOT NULL,
-    discount INT NOT NULL,
+    discount DECIMAL NOT NULL,
     tel VARCHAR(45) NOT NULL,
     username VARCHAR(45) NOT NULL,
     password VARCHAR(45) NOT NULL,

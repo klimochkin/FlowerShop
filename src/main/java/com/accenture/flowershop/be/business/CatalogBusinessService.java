@@ -17,4 +17,6 @@ public interface CatalogBusinessService {
  //   void flowerListClear();
 
     List<Flower> findListFlower(String flowerName, Integer min, Integer max);
+
+    void addCountFlower(int count);
 }
